@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Call Tracker</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        .container {
+            display: flex;
+        }
+        .form-container, .metrics-container {
+            width: 50%;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Customer Call Tracker</h1>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>Enter Call Details</h2>
+            <form method="POST">
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name" required><br><br>
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name" required><br><br>
+                <label for="referral_type">Referral Type:</label>
+                <input type="text" name="referral_type" required><br><br>
+                <label for="call_attempts">Call Attempts:</label>
+                <input type="number" name="call_attempts" required><br><br>
+                <label for="product_type">Product Type:</label>
+                <input type="text" name="product_type" required><br><br>
+                <label for="apt_date">Appointment Date:</label>
+                <input type="date" name="apt_date" required><br><br>
+                <label for="apt_time">Appointment Time:</label>
+                <input type="time" name="apt_time" required><br><br>
+                <label for="address">Address:</label>
+                <input type="text" name="address" required><br><br>
+                <label for="sales">Sales:</label>
+                <input type="number" name="sales" required><br><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="metrics-container">
+            <h2>Metrics</h2>
+            <p>Total Calls: {{ total_calls }}</p>
+            <p>Conversion Rate: {{ conversion_rate }}%</p>
+
+            <h2>Charts</h2>
+            <img src="data:image/png;base64,{{ calls_per_day_chart }}" alt="Calls per Day">
+        </div>
+    </div>
+</body>
+</html>
